@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import courses from "../data/courses";
 
 function HomePage() {
-  const activeLink = useSelector((state) => state.sidebar.activeLink);
+  // const activeLink = useSelector((state) => state.sidebar.activeLink);
   const popularCourses = courses
     .filter((course) => course.enrollments > 500)
     .slice(0, 6);
