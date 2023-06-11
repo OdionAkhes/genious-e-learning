@@ -1,156 +1,158 @@
 /** @format */
 
 // courses.js
+import animationImage from "../assets/animation.png";
+import designImage from "../assets/design.png";
+import scratchImage from "../assets/scratch.png";
+import psychologyImage from "../assets/psycology.png";
+import developmentImage from "../assets/development.png";
+import pythonImage from "../assets/python.png";
+import course7Image from "../assets/python.png";
+import course8Image from "../assets/python.png";
+import course9Image from "../assets/python.png";
+import course10Image from "../assets/python.png";
+import course11Image from "../assets/python.png";
+import course12Image from "../assets/python.png";
+import course13Image from "../assets/python.png";
+import course14Image from "../assets/python.png";
+import course15Image from "../assets/python.png";
+
 const courses = [
   {
     id: 1,
-    name: "Course 1",
-    image: "course1.jpg",
+    name: "Learning Maxon 4D Training Course",
+    image: animationImage,
     price: 49.99,
     duration: "2h 30m",
     lessons: 10,
-    enrollments: 500,
-
+    enrollments: 1900,
   },
   {
     id: 2,
-    name: "Course 2",
-    image: "course2.jpg",
+    name: "Design Thinking: The Beginner’s Guide",
+    image: designImage,
     price: 59.99,
     duration: "3h 45m",
     lessons: 15,
-    enrollments: 800,
-  
+    enrollments: 1900,
   },
   {
     id: 3,
-    name: "Course 3",
-    image: "course3.jpg",
+    name: "Become a Ux Designer from Scratch",
+    image: scratchImage,
     price: 39.99,
     duration: "1h 45m",
     lessons: 8,
-    enrollments: 300,
-  
+    enrollments: 1900,
   },
   {
     id: 4,
-    name: "Course 4",
-    image: "course4.jpg",
+    name: `Psychology and Web Design:
+Ulitmate Guide`,
+    image: psychologyImage,
     price: 69.99,
     duration: "4h 15m",
     lessons: 20,
     enrollments: 1200,
-
   },
   {
     id: 5,
-    name: "Course 5",
-    image: "course5.jpg",
+    name: "The Complete 2021 Web Development Bootcamp",
+    image: developmentImage,
     price: 54.99,
     duration: "2h 15m",
     lessons: 12,
-    enrollments: 600,
-   
+    enrollments: 1600,
   },
   {
     id: 6,
-    name: "Course 6",
-    image: "course6.jpg",
+    name: "Python for Data Science and Machine Learning",
+    image: pythonImage,
     price: 44.99,
     duration: "1h 30m",
     lessons: 7,
-    enrollments: 400,
- 
+    enrollments: 1900,
   },
   {
     id: 7,
     name: "Course 7",
-    image: "course7.jpg",
+    image: developmentImage,
     price: 59.99,
     duration: "3h 30m",
     lessons: 14,
     enrollments: 700,
- 
   },
   {
     id: 8,
     name: "Course 8",
-    image: "course8.jpg",
+    image: developmentImage,
     price: 49.99,
     duration: "2h 45m",
     lessons: 11,
     enrollments: 550,
-  
   },
   {
     id: 9,
     name: "Course 9",
-    image: "course9.jpg",
+    image: developmentImage,
     price: 79.99,
     duration: "5h 30m",
     lessons: 25,
     enrollments: 1500,
- 
   },
   {
     id: 10,
     name: "Course 10",
-    image: "course10.jpg",
+    image: developmentImage,
     price: 64.99,
     duration: "3h 15m",
     lessons: 13,
     enrollments: 650,
-  
   },
   {
     id: 11,
     name: "Course 11",
-    image: "course11.jpg",
+    image: developmentImage,
     price: 34.99,
     duration: "1h 15m",
     lessons: 6,
     enrollments: 200,
-
   },
   {
     id: 12,
     name: "Course 12",
-    image: "course12.jpg",
+    image: developmentImage,
     price: 89.99,
     duration: "6h 15m",
     lessons: 30,
     enrollments: 1800,
-
   },
   {
     id: 13,
     name: "Course 13",
-    image: "course13.jpg",
+    image: developmentImage,
     price: 74.99,
     duration: "4h 30m",
     lessons: 18,
     enrollments: 900,
-  
   },
   {
     id: 14,
     name: "Course 14",
-    image: "course14.jpg",
+    image: developmentImage,
     price: 59.99,
     duration: "3h 30m",
     lessons: 14,
     enrollments: 700,
-  
   },
   {
     id: 15,
     name: "Course 15",
-    image: "course15.jpg",
+    image: developmentImage,
     price: 49.99,
     duration: "2h 30m",
     lessons: 10,
     enrollments: 500,
-  
   },
 ];
 
