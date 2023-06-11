@@ -7,12 +7,12 @@ import scratchImage from "../assets/scratch.png";
 import psychologyImage from "../assets/psycology.png";
 import developmentImage from "../assets/development.png";
 import pythonImage from "../assets/python.png";
-import course7Image from "../assets/python.png";
-import course8Image from "../assets/python.png";
-import course9Image from "../assets/python.png";
-import course10Image from "../assets/python.png";
-import course11Image from "../assets/python.png";
-import course12Image from "../assets/python.png";
+import drawingImage from "../assets/drawing.png"
+import googleImage from "../assets/googlead.png"
+import artificialImage from "../assets/AI.png"
+import javascript1 from "../assets/javascript.png";
+import jsImage from "../assets/js.png";
+import awsImage from "../assets/awsImage.png";
 import course13Image from "../assets/python.png";
 import course14Image from "../assets/python.png";
 import course15Image from "../assets/python.png";
@@ -75,7 +75,7 @@ Ulitmate Guide`,
   },
   {
     id: 7,
-    name: "Course 7",
+    name: "The Complete 2021 Web Development Bootcamp",
     image: developmentImage,
     price: 59.99,
     duration: "3h 30m",
@@ -84,7 +84,7 @@ Ulitmate Guide`,
   },
   {
     id: 8,
-    name: "Course 8",
+    name: "Python for Data Science and Machine Learning",
     image: developmentImage,
     price: 49.99,
     duration: "2h 45m",
@@ -93,8 +93,8 @@ Ulitmate Guide`,
   },
   {
     id: 9,
-    name: "Course 9",
-    image: developmentImage,
+    name: "Artificial Intelligence & Machine Learning",
+    image: artificialImage,
     price: 79.99,
     duration: "5h 30m",
     lessons: 25,
@@ -102,8 +102,8 @@ Ulitmate Guide`,
   },
   {
     id: 10,
-    name: "Course 10",
-    image: developmentImage,
+    name: "Design of Graphic Elements to Boost Your Brand",
+    image: javascript1,
     price: 64.99,
     duration: "3h 15m",
     lessons: 13,
@@ -111,8 +111,8 @@ Ulitmate Guide`,
   },
   {
     id: 11,
-    name: "Course 11",
-    image: developmentImage,
+    name: "The Complete JavaScript Course 2021",
+    image: jsImage,
     price: 34.99,
     duration: "1h 15m",
     lessons: 6,
@@ -120,8 +120,8 @@ Ulitmate Guide`,
   },
   {
     id: 12,
-    name: "Course 12",
-    image: developmentImage,
+    name: "Ultimate Google Ads Training 2021: Profit with Pay Per Click",
+    image: googleImage,
     price: 89.99,
     duration: "6h 15m",
     lessons: 30,
@@ -129,8 +129,8 @@ Ulitmate Guide`,
   },
   {
     id: 13,
-    name: "Course 13",
-    image: developmentImage,
+    name: "Course 1The Ultimate Drawing Course - Beginner to Advanced",
+    image: drawingImage,
     price: 74.99,
     duration: "4h 30m",
     lessons: 18,
@@ -138,8 +138,8 @@ Ulitmate Guide`,
   },
   {
     id: 14,
-    name: "Course 14",
-    image: developmentImage,
+    name: "AWS Certified Solutions Architect - Associate 2021",
+    image: awsImage,
     price: 59.99,
     duration: "3h 30m",
     lessons: 14,
