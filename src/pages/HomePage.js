@@ -201,12 +201,12 @@ const upcomingTasks = [
               {upcomingTasks.map((task) => (
                 <div
                   key={task.id}
-                  className="p-6 flex items-center border-b-[0.5px] border-[#8F92A1]"
+                  className="p-5  space-y-5 flex items-center border-b-[0.5px] border-[#8F92A1]"
                 >
                   <div className="mr-3">{task.icon}</div>
                   <div>
-                    <p className="text-lg font-semibold">{task.task}</p>
-                    <p className="text-sm text-gray-500">{task.time}</p>
+                    <p className="">{task.task}</p>
+                    <p className="text-xs text-gray-500">{task.time}</p>
                   </div>
                 </div>
               ))}
