@@ -146,7 +146,7 @@ const upcomingTasks = [
       <div className="mb-5">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
           <div className="col-span-3 md:col-span-3">
-            <h3 className="text-lg  mb-2">Most Popular</h3>
+            <h3 className="text-lg  mb-1">Most Popular</h3>
             <div className="p-6">
               <div className="grid lg:grid-cols-3  grid-cols-1 md:grid-cols-2 gap-4">
                 {popularCourses.map((course) => (
@@ -201,7 +201,7 @@ const upcomingTasks = [
               {upcomingTasks.map((task) => (
                 <div
                   key={task.id}
-                  className="p-5  space-y-5 flex items-center border-b-[0.5px] border-[#8F92A1]"
+                  className="p-6  space-y-4 flex items-center border-b-[0.5px] border-[#8F92A1]"
                 >
                   <div className="mr-3">{task.icon}</div>
                   <div>
