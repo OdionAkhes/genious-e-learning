@@ -11,8 +11,7 @@ import AccountPage from './pages/AccountPage';
 import Logout from './pages/Logout';
 import HomePage from './pages/HomePage';
 import Discover from './pages/Discover';
-
-
+import Messages from './pages/Messages';
 
 function App() {
   return (
@@ -28,6 +27,7 @@ function App() {
                 <Route path="/discover" element={<Discover />} />
                 <Route path="/help-support" element={<Help />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/messages" element={<Messages />} />
                 <Route path="/account" element={<AccountPage />} />
                 <Route path="logout" element={<Logout />} />
               </Routes>
