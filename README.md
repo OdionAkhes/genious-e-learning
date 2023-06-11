@@ -1,1 +1,2 @@
-https://coruscating-bublanina-ed10d0.netlify.app/
+https://genious-e-learning.vercel.app/
+
