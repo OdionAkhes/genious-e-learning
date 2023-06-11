@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import courses from "../data/courses";
 
 function HomePage() {
