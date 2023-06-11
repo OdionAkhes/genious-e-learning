@@ -2,7 +2,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from './store';
+import { store } from './store';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
 import Help from './pages/Help';
@@ -26,9 +26,9 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/discover" element={<Discover />} />
-                <Route path="/help" element={<Help />} />
+                <Route path="/help-support" element={<Help />} />
                 <Route path="/settings" element={<Settings />} />
-                <Route path="/account-page" element={<AccountPage />} />
+                <Route path="/account" element={<AccountPage />} />
                 <Route path="logout" element={<Logout />} />
               </Routes>
             </div>
