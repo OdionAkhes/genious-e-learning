@@ -252,7 +252,7 @@ function HomePage() {
           <div className="col-span-3 md:col-span-3">
             <h3 className="text-lg mb-">Most Popular</h3>
             <div className="p-6">
-              <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="pb-2 grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
                 {popularCourses.map((course) => (
                   <div
                     key={course.id}
@@ -265,15 +265,15 @@ function HomePage() {
                         className="mr-4"
                       />
 
-                      <div>
+                      <div className="py-2">
                         <h4 className="font-semibold">{course.name}</h4>
                         <p className="text-sm text-gray-500">
                           {course.shortName}
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex">
+                    <div className="pb-3 flex items-center justify-between">
+                      <div className="flex ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="h-4 w-4 mr-1 text-gray-400"

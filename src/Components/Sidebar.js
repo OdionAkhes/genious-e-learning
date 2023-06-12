@@ -31,7 +31,7 @@ function Sidebar() {
   };
 
   return (
-    <aside className="hidden h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white">
+    <aside className="sticky  top-0 hidden h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white">
       <div className="">
         <div className="p-4 flex flex-col items-center space-y-4 mb-6">
           <Logo />
@@ -44,10 +44,9 @@ function Sidebar() {
                 link.name === activeLink ? "bg-white bg-opacity-10" : ""
               }`}
             >
-              <Icon iconName={link.icon} /> {/* Add Icon component here */}
+              <Icon iconName={link.icon} />
               <NavLink
                 to={link.path}
-               
                 onClick={() => handleLinkClick(link.name)}
               >
                 {link.name}
@@ -65,11 +64,9 @@ function Sidebar() {
                 link.name === activeLink ? "bg-white bg-opacity-10" : ""
               }`}
             >
-              <Icon iconName={link.icon} /> {/* Add Icon component here */}
+              <Icon iconName={link.icon} />
               <NavLink
                 to={link.path}
-       
-   
                 onClick={() => handleLinkClick(link.name)}
               >
                 {link.name}

@@ -20,7 +20,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="text-sm py-4 px-6 flex flex-col sm:flex-row items-center justify-between">
+    <nav className="text-sm py-4 px-6 flex sm:flex-row items-center justify-between">
       <div className="flex items-center space-x-8">
         <button
           className="text-[#2D405A] focus:outline-none"

@@ -20,7 +20,7 @@ function App() {
         <Router>
           <div className="flex">
             <Sidebar />
-            <div className="flex flex-col w-full">
+            <div className=" w-full">
               <Navbar />
               <Routes>
                 <Route path="/" element={<HomePage />} />
