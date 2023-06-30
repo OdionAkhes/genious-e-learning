@@ -15,7 +15,7 @@ import Messages from './pages/Messages';
 
 function App() {
   return (
-    <div>
+    <main>
       <Provider store={store}>
         <Router>
           <div className="flex">
@@ -29,13 +29,13 @@ function App() {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/account" element={<AccountPage />} />
-                <Route path="logout" element={<Logout />} />
+                <Route path="/logout" element={<Logout />} />
               </Routes>
             </div>
           </div>
         </Router>
       </Provider>
-    </div>
+    </main>
   );
 }
 

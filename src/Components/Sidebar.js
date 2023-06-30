@@ -37,15 +37,16 @@ function Sidebar() {
           <Logo />
         </div>
         <ul className="w-full px-2 space-y-4">
-          {navLinks.map((link, idx) => (
+          {navLinks.map((link) => (
             <li
-              key={idx}
+              key={link.name}
               className={`flex items-center space-x-2 p-3 rounded-lg ${
                 link.name === activeLink ? "bg-white bg-opacity-10" : ""
               }`}
             >
               <Icon iconName={link.icon} />
               <NavLink
+                aria-label={link.name}
                 to={link.path}
                 onClick={() => handleLinkClick(link.name)}
               >
@@ -55,26 +56,26 @@ function Sidebar() {
           ))}
         </ul>
       </div>
-      <div>
-        <ul className="space-y-6 p-4 mb-4">
-          {bottomLinks.map((link, idx) => (
-            <li
-              key={idx}
-              className={`flex items-center space-x-2 p-2 rounded-lg ${
-                link.name === activeLink ? "bg-white bg-opacity-10" : ""
-              }`}
+
+      <ul className="space-y-6 p-4 mb-4">
+        {bottomLinks.map((link) => (
+          <li
+            key={link.name}
+            className={`flex items-center space-x-2 p-2 rounded-lg ${
+              link.name === activeLink ? "bg-white bg-opacity-10" : ""
+            }`}
+          >
+            <Icon iconName={link.icon} />
+            <NavLink
+              to={link.path}
+              aria-label={link.name}
+              onClick={() => handleLinkClick(link.name)}
             >
-              <Icon iconName={link.icon} />
-              <NavLink
-                to={link.path}
-                onClick={() => handleLinkClick(link.name)}
-              >
-                {link.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+              {link.name}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 }
