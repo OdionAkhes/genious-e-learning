@@ -4,7 +4,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { changeActiveLink } from "../features/sidebarSlice";
+import { changeActiveLink, toggleSidebar } from "../features/sidebarSlice";
 import Logo from "./Logo";
 import Icon from "./Icon";
 
@@ -23,12 +23,22 @@ const bottomLinks = [
 ];
 
 function Sidebar() {
-  const activeLink = useSelector((state) => state.sidebar);
+const activeLink = useSelector((state) => state.sidebar.sidebar.activeLink);
+const isSidebarOpen = useSelector(
+  (state) => state.sidebar.sidebar.isSidebarOpen
+);
+
   const dispatch = useDispatch();
 
   const handleLinkClick = (link) => {
     dispatch(changeActiveLink(link));
   };
+
+
+
+  if (!isSidebarOpen) {
+    return null;
+  }
 
   return (
     <aside className="sticky  top-0 hidden h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white">
@@ -49,6 +59,7 @@ function Sidebar() {
                 aria-label={link.name}
                 to={link.path}
                 onClick={() => handleLinkClick(link.name)}
+                exact={link.path === "/"}
               >
                 {link.name}
               </NavLink>
@@ -67,9 +78,10 @@ function Sidebar() {
           >
             <Icon iconName={link.icon} />
             <NavLink
-              to={link.path}
               aria-label={link.name}
+              to={link.path}
               onClick={() => handleLinkClick(link.name)}
+              exact={link.path === "/"}
             >
               {link.name}
             </NavLink>

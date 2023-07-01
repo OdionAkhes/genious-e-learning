@@ -3,6 +3,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSidebar } from "../features/sidebarSlice";
+import { setSearchTerm } from "../features/actions"
 import {
   FiSearch,
   FiBell,
@@ -13,7 +14,17 @@ import profileImage from "../assets/avatar.png";
 
 function Navbar() {
   const dispatch = useDispatch();
-  const isSidebarOpen = useSelector((state) => state.sidebar.isSidebarOpen);
+ ;
+
+  const isSidebarOpen = useSelector(
+    (state) => state.sidebar.sidebar.isSidebarOpen
+  );
+
+    const handleSearchChange = (event) => {
+      dispatch(setSearchTerm(event.target.value));
+    };
+
+
 
   const handleToggleSidebar = () => {
     dispatch(toggleSidebar());
@@ -52,7 +63,8 @@ function Navbar() {
         </button>
         <div className="relative ">
           <input
-            type="text"
+            type="search"
+            onChange={handleSearchChange}
             placeholder="Search anything"
             className="mx-2 text-[#A6ACBE] py-1 px-2 pl-8 rounded-3xl focus:outline-none lg:w-96  "
           />

@@ -3,25 +3,25 @@
 // src/features/sidebarSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
-  isSidebarOpen: false
-}
+  sidebar: {
+    isSidebarOpen: false,
+    activeLink: "",
+  },
+};
 
 const sidebarSlice = createSlice({
   name: "sidebar",
- initialState,
+  initialState,
   reducers: {
-      
     toggleSidebar: (state) => {
-      state.isSidebarOpen = !state.isSidebarOpen;
+      state.sidebar.isSidebarOpen = !state.sidebar.isSidebarOpen;
     },
-    changeActiveLink: (state, action) => action.payload,
-  }
-  
+    changeActiveLink: (state, action) => {
+      state.sidebar.activeLink = action.payload;
+    },
+  },
 });
 
 export const { toggleSidebar, changeActiveLink } = sidebarSlice.actions;
-
-
 export default sidebarSlice.reducer;

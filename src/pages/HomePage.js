@@ -1,16 +1,22 @@
 /** @format */
 
+
 import React from "react";
 import courses from "../data/courses";
 import PopularCourses from "../Components/PopularCourses";
+import { useSelector } from "react-redux";
 import UpcomingTasks from "../Components/UpcomingTasks";
-import upcomingTasks from "../data/tasks"
-function HomePage() {
-  const popularCourses = courses
-    .filter((course) => course.enrollments > 500)
-    .slice(0, 6);
+import upcomingTasks from "../data/tasks";
 
-  
+
+
+
+function HomePage() {
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+  const popularCourses = courses
+    .filter((course) => course.enrollments > 500 &&
+      course.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    .slice(0, 6);
 
   const completedCoursesProgress = 70;
   const certificatesEarnedProgress = 20;
@@ -47,16 +53,19 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="bg-gray-200 h-2 rounded-full">
-            <div
-              className="bg-green-500 h-full rounded-full"
-              style={{ width: `${completedCoursesProgress}%` }}
-            ></div>
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-200 h-2 rounded-full w-full">
+              <div
+                className="bg-[#4C6FFF] h-full rounded-full"
+                style={{ width: `${completedCoursesProgress}%` }}
+              ></div>
+            </div>
+            <span className="text-md text-black ml-2">
+              {completedCoursesProgress}%
+            </span>
           </div>
-          <span className="text-xs text-gray-500">
-            {completedCoursesProgress}%
-          </span>
         </div>
+
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="flex items-center mb-2">
             <div className="rounded-full bg-gradient-to-br from-orange-400 to-red-500 text-white h-10 w-10 flex items-center justify-center mr-2">
@@ -80,16 +89,17 @@ function HomePage() {
               <p className="mb-2 text-sm text-[#767278]">Certificates Earned</p>
             </div>
           </div>
-
-          <div className="bg-gray-200 h-2 rounded-full">
-            <div
-              className="bg-blue-500 h-full rounded-full"
-              style={{ width: `${certificatesEarnedProgress}%` }}
-            ></div>
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-200 h-2 rounded-full w-full">
+              <div
+                className="bg-[#FF7373] h-full rounded-full"
+                style={{ width: `${certificatesEarnedProgress}%` }}
+              ></div>
+            </div>
+            <span className="text-md text-black ml-2">
+              {certificatesEarnedProgress}%
+            </span>
           </div>
-          <span className="text-xs text-gray-500">
-            {certificatesEarnedProgress}%
-          </span>
         </div>
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="flex items-center mb-2">
@@ -115,16 +125,19 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="bg-gray-200 h-2 rounded-full">
-            <div
-              className="bg-yellow-500 h-full rounded-full"
-              style={{ width: `${coursesInProgressProgress}%` }}
-            ></div>
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-200 h-2 rounded-full w-full">
+              <div
+                className="bg-yellow-500 h-full rounded-full"
+                style={{ width: `${coursesInProgressProgress}%` }}
+              ></div>
+            </div>
+            <span className="text-md text-black ml-2">
+              {coursesInProgressProgress}%
+            </span>
           </div>
-          <span className="text-xs text-gray-500">
-            {coursesInProgressProgress}%
-          </span>
         </div>
+
         <div className="bg-white p-4 rounded-lg shadow">
           <div className="flex items-center mb-2">
             <div className="rounded-full bg-gradient-to-t from-green-500 to-green-300 text-white h-10 w-10 flex items-center justify-center mr-2">

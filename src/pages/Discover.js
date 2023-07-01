@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 import courses from "../data/courses";
-
+import { useSelector } from "react-redux";
 function DiscoveryPage() {
   // const dispatch = useDispatch();
   // const courses = useSelector((state) => state.courses);
+  
   const [selectedSort, setSelectedSort] = useState("popular");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [gridView, setGridView] = useState(true);
