@@ -17,6 +17,17 @@ import course13Image from "../assets/python.png";
 import course14Image from "../assets/python.png";
 import course15Image from "../assets/python.png";
 
+
+
+// function to generate an array of units
+const generateUnits = (numUnits) => {
+  return Array.from({ length: numUnits }, (_, i) => ({
+    title: `Unit ${i + 1}`,
+    completed: i < 2, // this marks the first two units as completed
+  }));
+};
+
+
 const courses = [
   {
     id: "1",
@@ -26,6 +37,8 @@ const courses = [
     duration: "2h 30m",
     lessons: 10,
     enrollments: 1900,
+    units: generateUnits(10),
+
     discountPrice: 80,
     features: ["Feature 1", "Feature 2", "Feature 3"],
     tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],

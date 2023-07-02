@@ -1,7 +1,8 @@
 /** @format */
 
 import { Tab } from "@headlessui/react";
-import courses from "../data/courses";
+import CourseInfoTab from "./CourseInfoTab";
+import CourseContent from "./CourseContent";
 function Tabs({course}) {
   return (
     <div className="w-full">
@@ -45,9 +46,12 @@ function Tabs({course}) {
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-2 text-[#102844]">
-          <Tab.Panel className="text-sm ">{course.description}</Tab.Panel>
+          <Tab.Panel className="text-sm ">
+            <CourseInfoTab course={course}/>
+            
+         </Tab.Panel>
           <Tab.Panel>
-            <p>Tab 2 Content</p>
+            {/* <CourseContent course={course} /> */}
           </Tab.Panel>
           <Tab.Panel>
             <p>Tab 3 Content</p>
