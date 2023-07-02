@@ -4,10 +4,13 @@ import React, { useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 import courses from "../data/courses";
 import { useSelector } from "react-redux";
+import CourseCard from "../Components/CourseCard";
+
 function DiscoveryPage() {
-  // const dispatch = useDispatch();
-  // const courses = useSelector((state) => state.courses);
-  
+ 
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+
+
   const [selectedSort, setSelectedSort] = useState("popular");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [gridView, setGridView] = useState(true);
@@ -44,11 +47,18 @@ function DiscoveryPage() {
     filteredCourses = filteredCourses.sort((a, b) => b.price - a.price);
   }
 
+  if (searchTerm) {
+    filteredCourses = filteredCourses.filter(
+      (course) =>
+        course.name.toLowerCase().includes(searchTerm.toLowerCase()) 
+    );
+  }
   return (
-    <div className="p-6">
+    <div className="p-6  bg-[#F5F7F9]">
+      <h3 className="text-lg mb-6 font-semibold text-[#102844]"> Discover</h3>
       <div className="flex items-center justify-between mb-4 text-sm">
-        <div className="flex space-x-2">
-          <label htmlFor="sortSelect" className="font-medium">
+        <div className="flex space-x-2  ">
+          <label htmlFor="sortSelect" className="font-medium ">
             Sort By:
           </label>
           <select
@@ -79,64 +89,44 @@ function DiscoveryPage() {
         </div>
         <div className="flex items-center space-x-4">
           <button
-            className={`px-2 py-1 rounded ${gridView ? "bg-gray-200" : ""}`}
+            className={` px-1 rounded ${gridView ? "bg-white" : ""}`}
             onClick={toggleGridView}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              {gridView ? (
-                <path
-                  fillRule="evenodd"
-                  d="M4 5a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1H4zm0 2h12v6H4V7zm0 8v1a1 1 0 001 1h12a1 1 0 001-1v-1H4zm0-8h6v6H4V7z"
-                  clipRule="evenodd"
-                />
-              ) : (
-                <path
-                  fillRule="evenodd"
-                  d="M4 4a1 1 0 00-1 1v8a1 1 0 001 1h5v-2H5V6h3V4H4zm6 0h3a1 1 0 011 1v8a1 1 0 01-1 1h-3v2h3a3 3 0 003-3V7a3 3 0 00-3-3zm3 2v6h-3V6h3z"
-                  clipRule="evenodd"
-                />
-              )}
-            </svg>
+            {gridView ? (
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Components/Icons/Content/layout-grid">
+                  <path
+                    id="Combined Shape"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.5 10.5H16.5V16.5H10.5V10.5ZM10.5 19.5H16.5V25.5H10.5V19.5ZM19.5 19.5H25.5V25.5H19.5V19.5ZM19.5 10.5H25.5V16.5H19.5V10.5Z"
+                    fill="#4C6FFF"
+                  />
+                </g>
+              </svg>
+            ) : (
+              <path
+                fillRule="evenodd"
+                d="M4 4a1 1 0 00-1 1v8a1 1 0 001 1h5v-2H5V6h3V4H4zm6 0h3a1 1 0 011 1v8a1 1 0 01-1 1h-3v2h3a3 3 0 003-3V7a3 3 0 00-3-3zm3 2v6h-3V6h3z"
+                clipRule="evenodd"
+              />
+            )}
           </button>
-       
         </div>
       </div>
-      <div className={`grid ${gridView ? "grid-cols-4" : ""} gap-4`}>
+      <div
+        className={`grid ${
+          gridView ? " lg:grid-cols-4 grid-cols-2 md:grid-cols-3   " : ""
+        } gap-4`}
+      >
         {filteredCourses.map((course) => (
-          <div key={course.id} className="bg-white rounded-lg shadow p-4">
-            <img
-              src={course.image}
-              alt={course.name}
-              className="h-32 w-full object-cover mb-4 rounded-lg"
-            />
-            <h4 className="text-sm mb-2">{course.name}</h4>
-            <p className="text-gray-500 text-sm">{course.shortName}</p>
-            <div className="flex items-center justify-between">
-              <div className="flex">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1 text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm-1-5a1 1 0 100-2 1 1 0 000 2zm2-6a1 1 0 10-2 0v4a1 1 0 102 0V5z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-gray-500 text-xs">
-                  {course.lessons} Lessons ({course.duration})
-                </span>
-              </div>
-              <div className="text-[#FF7800]">${course.price}</div>
-            </div>
-          </div>
+          <CourseCard key={course.id} course={course} />
         ))}
       </div>
     </div>

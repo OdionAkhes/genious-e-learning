@@ -165,7 +165,7 @@ function HomePage() {
         </div>
       </div>
       <div className="mb-5">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <PopularCourses popularCourses={popularCourses} />
           <UpcomingTasks upcomingTasks={upcomingTasks} />
         </div>
