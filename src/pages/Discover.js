@@ -31,28 +31,28 @@ function DiscoveryPage() {
   };
 
   // Apply filters and sorting
-  let filteredCourses = courses;
-  if (selectedCategory !== "all") {
-    filteredCourses = filteredCourses.filter(
-      (course) => course.category === selectedCategory
-    );
-  }
-  if (selectedSort === "popular") {
-    filteredCourses = filteredCourses.sort(
-      (a, b) => b.enrollments - a.enrollments
-    );
-  } else if (selectedSort === "price-low-high") {
-    filteredCourses = filteredCourses.sort((a, b) => a.price - b.price);
-  } else if (selectedSort === "price-high-low") {
-    filteredCourses = filteredCourses.sort((a, b) => b.price - a.price);
-  }
+ let filteredCourses = courses;
+ if (selectedCategory !== "all") {
+   filteredCourses = filteredCourses.filter(
+     (course) => course.category === selectedCategory
+   );
+ }
+ if (selectedSort === "popular") {
+   filteredCourses = filteredCourses
+     .slice()
+     .sort((a, b) => b.enrollments - a.enrollments);
+ } else if (selectedSort === "price-low-high") {
+   filteredCourses = filteredCourses.slice().sort((a, b) => a.price - b.price);
+ } else if (selectedSort === "price-high-low") {
+   filteredCourses = filteredCourses.slice().sort((a, b) => b.price - a.price);
+ }
 
-  if (searchTerm) {
-    filteredCourses = filteredCourses.filter(
-      (course) =>
-        course.name.toLowerCase().includes(searchTerm.toLowerCase()) 
-    );
-  }
+ if (searchTerm) {
+   filteredCourses = filteredCourses.filter((course) =>
+     course.name.toLowerCase().includes(searchTerm.toLowerCase())
+   );
+ }
+
   return (
     <div className="p-6  bg-[#F5F7F9]">
       <h3 className="text-lg mb-6 font-semibold text-[#102844]"> Discover</h3>
@@ -111,11 +111,23 @@ function DiscoveryPage() {
                 </g>
               </svg>
             ) : (
-              <path
-                fillRule="evenodd"
-                d="M4 4a1 1 0 00-1 1v8a1 1 0 001 1h5v-2H5V6h3V4H4zm6 0h3a1 1 0 011 1v8a1 1 0 01-1 1h-3v2h3a3 3 0 003-3V7a3 3 0 00-3-3zm3 2v6h-3V6h3z"
-                clipRule="evenodd"
-              />
+              <svg
+                width="34"
+                height="34"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="Components/Icons/Content/layout-grid">
+                  <path
+                    id="Combined Shape"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.5 10.5H16.5V16.5H10.5V10.5ZM10.5 19.5H16.5V25.5H10.5V19.5ZM19.5 19.5H25.5V25.5H19.5V19.5ZM19.5 10.5H25.5V16.5H19.5V10.5Z"
+                    fill="#4C6FFF"
+                  />
+                </g>
+              </svg>
             )}
           </button>
         </div>

@@ -12,7 +12,7 @@ import Logout from './pages/Logout';
 import HomePage from './pages/HomePage';
 import Discover from './pages/Discover';
 import Messages from './pages/Messages';
-
+import CourseDetails from './Components/CourseDetails';
 function App() {
   return (
     <main>
@@ -25,6 +25,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/discover" element={<Discover />} />
+                <Route path="/courses/:id" element={<CourseDetails/>}/>
                 <Route path="/help-support" element={<Help />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/messages" element={<Messages />} />
