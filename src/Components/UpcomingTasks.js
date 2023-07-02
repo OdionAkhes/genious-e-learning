@@ -8,11 +8,16 @@ const UpcomingTasks = ({upcomingTasks}) => {
         {upcomingTasks.map((task) => (
           <div
             key={task.id}
-            className="p-6 space-y-4 flex items-center border-b-[0.5px] border-[#8F92A1]"
+            className="p-6 space-y-2 flex items-center border-b-[0.5px] border-[#8F92A1]"
           >
-            <div className="mr-3">{task.icon}</div>
+            <div
+              className="mr-3 p-3 rounded-lg "
+              style={{ backgroundColor: task.color }}
+            >
+              {task.icon}
+            </div>
             <div>
-              <p className="">{task.task}</p>
+              <p className="text-sm font-[500]">{task.task}</p>
               <p className="text-xs text-gray-500">{task.time}</p>
             </div>
           </div>

@@ -20,19 +20,23 @@ import course15Image from "../assets/python.png";
 const courses = [
   {
     id: "1",
-    name: "Learning Maxon 4D Training Course",
+    name: "Learning  Maxon  4D  Trainingg Course",
     image: animationImage,
     price: 49.99,
     duration: "2h 30m",
     lessons: 10,
     enrollments: 1900,
-    description:`IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
 
     
     Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
 
 
-  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "2",
@@ -45,7 +49,7 @@ const courses = [
   },
   {
     id: "3",
-    name: "Become a Ux Designer from Scratch",
+    name: "Become a Ux Designer fromm Scratch",
     image: scratchImage,
     price: 39.99,
     duration: "1h 45m",
@@ -106,6 +110,17 @@ Ulitmate Guide`,
     duration: "5h 30m",
     lessons: 25,
     enrollments: 1500,
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+
+    
+    Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
+
+
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "10",

@@ -24,7 +24,6 @@ const Icon = ({ iconName, ...props } )=> {
     
   const SvgIcon = icons[iconName];
   if (!SvgIcon) {
-    // Icon not found in the mapping
     return null;
   }
 
