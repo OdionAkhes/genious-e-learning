@@ -52,7 +52,7 @@ const CourseInfoTab = ({ course }) => {
       <h2 className="text-[#102844] text-md mt-6">Reviews</h2>
       {reviews && reviews.length > 0 ? (
         reviews.map((review, index) => (
-          <div key={index} className="gap-4 flex items-start space-x-2 my-8">
+          <div key={index} className="pb-6 border-b gap-4 flex items-start space-x-2 my-8">
             <img
               src={review.avatar}
               alt={review.name}
@@ -68,7 +68,7 @@ const CourseInfoTab = ({ course }) => {
       ) : (
         <p>No reviews yet.</p>
       )}
-      <hr />
+
       <p className=" text-md text-[#102844] mt-8">Leave a Comment</p>
       <form onSubmit={handleCommentSubmit}>
         <textarea
