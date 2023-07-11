@@ -3,12 +3,13 @@
 import { Tab } from "@headlessui/react";
 import CourseInfoTab from "./CourseInfoTab";
 import CourseContent from "./CourseContent";
-function Tabs({course}) {
+function Tabs({course, setSelectedTab}) {
   return (
     <div className="w-full">
       <Tab.Group>
         <Tab.List className="flex  space-x-8 " aria-label="My tabs">
           <Tab
+            onClick={() => setSelectedTab("Information")}
             className={({ selected }) =>
               selected
                 ? " rounded-xl p-1  px-2 text-xs   text-white  bg-[#FF7800] outline-none "
@@ -18,19 +19,19 @@ function Tabs({course}) {
             Information
           </Tab>
           <Tab
+            onClick={() => setSelectedTab("Content")}
             className={({ selected }) =>
               selected
                 ? " rounded-xl p-1 px-2 text-xs text-white outline-none  bg-[#FF7800] "
                 : " text-xs p-1 px-2  text-[#767278] "
             }
           >
-            
             Content
           </Tab>
           <Tab
             className={({ selected }) =>
               selected
-                ? "rounded-xl p-1 px-2 text-xs  outline-none text-white  bg-[#FF7800]"
+                ? "rounded-xl flex gap-2  p-1 px-2 text-xs  outline-none text-white  bg-[#FF7800]"
                 : " flex gap-2 text-xs p-1 px-2  text-[#767278] "
             }
           >
@@ -56,8 +57,8 @@ function Tabs({course}) {
           <Tab
             className={({ selected }) =>
               selected
-                ? "rounded-xl p-1 px-2 text-xs outline-none  text-white  bg-[#FF7800]"
-                : " flex gap-2 text-xs p-1 px-2  text-[#767278] "
+                ? "rounded-xl p-1 px-2 text-xs outline-none flex gap-2  text-white  bg-[#FF7800]"
+                : " text-xs flex gap-2  p-1 px-2  text-[#767278] "
             }
           >
             <svg

@@ -1,11 +1,12 @@
 /** @format */
 
-import React from "react";
+import React,{useState} from "react";
 import { useParams ,useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Tab } from "@headlessui/react";
 import Tabs from "./Tabs";
 import CourseDetailsInfo from "./CourseDetailsInfo";
+import CourseOverview from "./CourseOverview";
 const CourseDetails = () => {
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ const CourseDetails = () => {
   const course = useSelector((state) =>
     state.courses.find((course) => course.id === id)
   );
+  const [selectedTab, setSelectedTab] = useState("Information");
 
     return course ? (
       <div className="bg-[#F5F7F9] px-6 pt-6">
@@ -52,12 +54,16 @@ const CourseDetails = () => {
               <p className="text-sm text-[#767278]">By {course.instructor}</p>
 
               <div className="mt-4">
-                <Tabs course={course} />
+                <Tabs course={course} setSelectedTab={setSelectedTab} />
               </div>
             </div>
           </div>
           <div className="bg-white p-6 rounded-xl">
-            <CourseDetailsInfo course={course} />
+            {selectedTab === "Information" ? (
+              <CourseDetailsInfo course={course} />
+            ) : (
+              <CourseOverview subcourses={course.subcourses} />
+            )}
           </div>
         </div>
       </div>

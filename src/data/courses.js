@@ -19,15 +19,6 @@ import course15Image from "../assets/python.png";
 
 
 
-// function to generate an array of units
-const generateUnits = (numUnits) => {
-  return Array.from({ length: numUnits }, (_, i) => ({
-    title: `Unit ${i + 1}`,
-    completed: i < 2, // this marks the first two units as completed
-  }));
-};
-
-
 const courses = [
   {
     id: "1",
@@ -37,18 +28,91 @@ const courses = [
     duration: "2h 30m",
     lessons: 10,
     enrollments: 1900,
+    coursesIncluded: 6,
+    downloads: 70,
+    positiveReviews: 45,
+    students: 2167,
+
+    availability: "Available from the app",
+    audio: "Spanish",
+    level: "Beginner",
     subcourses: [
       {
-        name: "Subcourse 1",
-        units: generateUnits(5), // generate 5 units
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities ", completed: true },
+          {
+            title: " How to get the most...",
+            completed: false,
+          },
+          {
+            title: " How to get the most...",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
       },
       {
-        name: "Subcourse 2",
-        units: generateUnits(4), // generate 4 units
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
       },
       {
-        name: "Subcourse 3",
-        units: generateUnits(3), // generate 3 units
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
       },
     ],
 
@@ -73,6 +137,73 @@ const courses = [
     duration: "3h 45m",
     lessons: 15,
     enrollments: 1900,
+    subcourses: [
+      {
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities (career profile)", completed: true },
+          {
+            title: " How to get the most...",
+            completed: false,
+          },
+          {
+            title: " How to get the most...",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
+      },
+      {
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+    ],
+
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+
+    
+    Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
+
+
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "3",
@@ -82,6 +213,73 @@ const courses = [
     duration: "1h 45m",
     lessons: 8,
     enrollments: 1900,
+    subcourses: [
+      {
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities (career profile)", completed: true },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
+      },
+      {
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+    ],
+
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+
+    
+    Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
+
+
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "4",
@@ -92,6 +290,73 @@ Ulitmate Guide`,
     duration: "4h 15m",
     lessons: 20,
     enrollments: 1200,
+    subcourses: [
+      {
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities (career profile)", completed: true },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
+      },
+      {
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+    ],
+
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+
+    
+    Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
+
+
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "5",
@@ -101,6 +366,73 @@ Ulitmate Guide`,
     duration: "2h 15m",
     lessons: 12,
     enrollments: 1600,
+    subcourses: [
+      {
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities (career profile)", completed: true },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
+      },
+      {
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+    ],
+
+    discountPrice: 80,
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],
+
+    description: `IBM is the second-largest Predictive, consectetur adipiscing elit. Sit turpis egestas aenean amet ac rhoncus vitae tristique. A sed magna vitae nullam. Accumsan ullamcorper amet congue fermentum egestas purus molestie nam. Dolor, dictumst mauris vestibulum vehicula vel cras. Pellentesque nam congue auctor dolor mattis erat. Pharetra feugiat in justo purus dolor feugiat ultrices. 
+
+    
+    Pretium at parturient curabitur eget nunc pharetra. Vitae pharetra adipiscing purus faucibus bibendum. Ultrices mi tristique et enim pretium lacus, vivamus. Augue eget fermentum, mauris viverra. Tristique arcu ipsum risus a arcu pellentesque pharetra velit.
+
+
+  Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
   {
     id: "6",
@@ -137,6 +469,62 @@ Ulitmate Guide`,
     duration: "5h 30m",
     lessons: 25,
     enrollments: 1500,
+    subcourses: [
+      {
+        name: "Introduction",
+        units: [
+          { title: " Presentation", completed: true },
+          { title: " Job opportunities (career profile)", completed: true },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: " How to get the most out of this course!",
+            completed: false,
+          },
+          {
+            title: "Interface and the...",
+            completed: false,
+          },
+          {
+            title: " Volume with vectors",
+            completed: false,
+          },
+          {
+            title: " Symmetry, connector...",
+            completed: false,
+          },
+          {
+            title: " Add and remove lines...",
+            completed: false,
+          },
+        ],
+      },
+      {
+        name: "Learn Manufacturing",
+
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: " Mograph (cloner)", completed: false },
+          { title: " How to get the most...", completed: false },
+          { title: " Interface and the...", completed: false },
+          { title: "Interface and the...", completed: false },
+          { title: " Symmetry, connector...", completed: false },
+          { title: " Practice: first charac...", completed: false },
+        ],
+      },
+      {
+        name: "Field Experience testing modules & investers!",
+        units: [
+          { title: " Spontaneous character", completed: true },
+          { title: " Deformers", completed: true },
+          { title: "Mograph (cloner)", completed: false },
+        ],
+      },
+    ],
+
     discountPrice: 80,
     features: ["Feature 1", "Feature 2", "Feature 3"],
     tags: ["Sketch", "Product Design", "Tuts", "UI/UX"],

@@ -1,13 +1,20 @@
 import React from 'react'
+import CourseFeatures from './CourseFeatures';
 
-const CourseDetailsInfo = ({course}) => {
+const CourseDetailsInfo = ({ course }) => {
+ 
+
   return (
     <div>
       <div className="px-6 flex justify-between p-4 border-2 border-dashed bg-[#F8F8FB] border-[#0000001A] rounded-xl">
         <h3 className="font-[500] text-md"> USD {course.price}</h3>
-        <h3 className="text-[#767278] ">$ {course.discountPrice}</h3>
+        <div className="relative">
+          <h3 className="text-[#767278] z-10">$ {course.discountPrice}</h3>
+          <div className="absolute h-0.5 bg-[#FF7800] transform -rotate-12 left-[-10%] right-[-10%] top-1/2"></div>
+        </div>
       </div>
-      <button className="font-semibold gap-2 flex rounded-lg w-full my-6 p-2 py-3 bg-[#4C6FFF] text-white  items-center  justify-center">
+
+      <button className="font-[600] gap-2 flex rounded-lg w-full my-6 p-2 py-3 bg-[#4C6FFF] text-white  items-center  justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"
@@ -37,15 +44,11 @@ const CourseDetailsInfo = ({course}) => {
 
       <hr className="my-4" />
 
-      <h3>This course includes:</h3>
-      <ul>
-        {course.features.map((feature, id) => (
-          <li key={id} className="flex items-center">
-            {/* Icon here */}
-            {feature}
-          </li>
-        ))}
-      </ul>
+      <div className="my-6">
+        <h3>This course includes:</h3>
+
+        <CourseFeatures course={course} />
+      </div>
 
       <hr className="my-4" />
 
