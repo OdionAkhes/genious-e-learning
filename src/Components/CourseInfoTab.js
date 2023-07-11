@@ -2,8 +2,8 @@ import React from 'react'
 
 const CourseInfoTab = ({course}) => {
   return (
-    <div>
-      <div>
+
+      <div className='my-6'>
         {course.description}
         <hr />
         <div className="my-4">
@@ -21,7 +21,7 @@ const CourseInfoTab = ({course}) => {
         <button className="text-xs mt-2 py-3 px-4 bg-[#4C6FFF] text-white rounded shadow-sm focus:outline-none  ">
           Publish Review
         </button>
-      </div>
+  
     </div>
   );
 }

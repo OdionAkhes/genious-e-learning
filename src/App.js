@@ -12,6 +12,7 @@ import Logout from './pages/Logout';
 import HomePage from './pages/HomePage';
 import Discover from './pages/Discover';
 import Messages from './pages/Messages';
+import NotFound from './pages/NotFound';
 import CourseDetails from './Components/CourseDetails';
 function App() {
   return (
@@ -25,12 +26,13 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/discover" element={<Discover />} />
-                <Route path="/courses/:id" element={<CourseDetails/>}/>
+                <Route path="/courses/:id" element={<CourseDetails />} />
                 <Route path="/help-support" element={<Help />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/account" element={<AccountPage />} />
                 <Route path="/logout" element={<Logout />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
           </div>

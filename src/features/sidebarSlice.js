@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   sidebar: {
-    isSidebarOpen: false,
+    isSidebarOpen: true,
     activeLink: "",
   },
 };

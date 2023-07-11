@@ -37,7 +37,20 @@ const courses = [
     duration: "2h 30m",
     lessons: 10,
     enrollments: 1900,
-    units: generateUnits(10),
+    subcourses: [
+      {
+        name: "Subcourse 1",
+        units: generateUnits(5), // generate 5 units
+      },
+      {
+        name: "Subcourse 2",
+        units: generateUnits(4), // generate 4 units
+      },
+      {
+        name: "Subcourse 3",
+        units: generateUnits(3), // generate 3 units
+      },
+    ],
 
     discountPrice: 80,
     features: ["Feature 1", "Feature 2", "Feature 3"],
@@ -51,6 +64,7 @@ const courses = [
 
   Neque, erat tristique volutpat faucibus mattis vulputate faucibus. Ut phasellus nulla at sociis est, turpis purus. Faucibus donec malesuada tristique quam commodo felis nulla.`,
   },
+
   {
     id: "2",
     name: "Design Thinking: The Beginner’s Guide",
