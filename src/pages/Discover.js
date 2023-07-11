@@ -34,14 +34,34 @@ function DiscoveryPage() {
   };
 
   // Apply filters and sorting
+
   let filteredCourses = courses;
-  // Add course filtering logic here
+  if (selectedCategory !== "all") {
+    filteredCourses = filteredCourses.filter(
+      (course) => course.category === selectedCategory
+    );
+  }
+  if (selectedSort === "popular") {
+    filteredCourses = filteredCourses
+      .slice()
+      .sort((a, b) => b.enrollments - a.enrollments);
+  } else if (selectedSort === "price-low-high") {
+    filteredCourses = filteredCourses.slice().sort((a, b) => a.price - b.price);
+  } else if (selectedSort === "price-high-low") {
+    filteredCourses = filteredCourses.slice().sort((a, b) => b.price - a.price);
+  }
+
+  if (searchTerm) {
+    filteredCourses = filteredCourses.filter((course) =>
+      course.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 
   return (
     <div className="p-6 bg-[#F5F7F9]">
       <h3 className="text-lg mb-6 font-semibold text-[#102844]"> Discover</h3>
       <div className="flex items-center justify-between mb-4 text-sm">
-        <div className="flex space-x-2">
+        <div className="flex space-x-4">
           {/* Sort By dropdown */}
           <div className="text-sm bg-white p-2 rounded-xl flex items-center ">
             <label htmlFor="sortSelect" className="">
@@ -49,7 +69,7 @@ function DiscoveryPage() {
             </label>
             <select
               id="sortSelect"
-              className=" text-sm text-[#767278]"
+              className=" text-sm text-[#767278] w-20"
               value={selectedSort}
               onChange={handleSortChange}
             >
@@ -59,9 +79,8 @@ function DiscoveryPage() {
             </select>
           </div>
 
-          {/* Courses dropdown */}
           <div className="text-sm bg-white p-2 rounded-xl flex items-center ">
-            <label htmlFor="courseSelect" className="">
+            <label htmlFor="courseSelect" className="text-[#767278] text-sm">
               Courses:
             </label>
             <select
@@ -69,24 +88,20 @@ function DiscoveryPage() {
               className=" text-sm text-[#767278]"
               value={selectedCourse}
               onChange={handleCourseChange}
-            >
-            
-           
-            </select>
+            ></select>
           </div>
 
-  
-          <div className="bg-white p-2 rounded-xl flex items-center space-x-2">
+          <div className="text-[14px] bg-white p-2 rounded-xl flex items-center ">
             <label htmlFor="categorySelect" className="">
               Category:
             </label>
             <select
               id="categorySelect"
-              className=" py-1 px-2"
+              className=" py-1 px-1 w-26 text-[#767278]"
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
-              <option value="all">All</option>
+              <option value="all">All Category</option>
               <option value="technology">Technology</option>
               <option value="business">Business</option>
               <option value="marketing">Marketing</option>
@@ -95,7 +110,6 @@ function DiscoveryPage() {
           </div>
         </div>
 
-      
         <div className="flex items-center space-x-4">
           <button className="text- items-center flex px-2 py-2 bg-white p-2 rounded-xl  ">
             <svg
@@ -115,7 +129,7 @@ function DiscoveryPage() {
             Filters
           </button>
           <button
-            className={` px-1 rounded ${gridView ? "bg-white" : ""}`}
+            className={` px-1 rounded-xl ${gridView ? "bg-white" : "bg-white"}`}
             onClick={toggleGridView}
           >
             <svg
