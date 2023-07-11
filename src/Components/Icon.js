@@ -1,12 +1,12 @@
 import React from 'react'
-import HomeIcon from "../assets/Settings.svg";
-import DiscoverIcon from "../assets/Settings.svg";
+import HomeIcon from "../assets/home.svg";
+import DiscoverIcon from "../assets/list.svg";
 import SupportIcon from "../assets/Settings.svg"
 import SettingsIcon from "../assets/Settings.svg";
-import AccountIcon from "../assets/Settings.svg";
-import HelpIcon from "../assets/Settings.svg";
-import LogoutIcon from "../assets/Settings.svg";
-import MessageIcon from "../assets/Settings.svg";
+import AccountIcon from "../assets/account.svg";
+import HelpIcon from "../assets/Headset 02.svg";
+import LogoutIcon from "../assets/logout.svg";
+import MessageIcon from "../assets/chat.svg"
 const icons = {
   home: HomeIcon,
   help: HelpIcon,

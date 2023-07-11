@@ -82,7 +82,7 @@ function Tabs({course, setSelectedTab}) {
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-2 text-[#102844]">
-          <Tab.Panel className="text-sm ">
+          <Tab.Panel className="">
             <CourseInfoTab course={course} />
           </Tab.Panel>
           <Tab.Panel>
