@@ -12,12 +12,21 @@ function OpenedChat({ chat }) {
   const [messageText, setMessageText] = useState("");
   const messages = chat ? chat.messages : [];
 
-  const handleSendMessage = () => {
-    if (messageText.trim() !== "") {
-      dispatch(sendMessage({ chatId: chat.id, messageText }));
-      setMessageText("");
-    }
-  };
+const handleSendMessage = () => {
+  if (messageText.trim() !== "") {
+    dispatch(
+      sendMessage({
+        chatId: chat.id,
+        messageText: messageText,
+        uid: "user1", // Replace with actual user's uid
+        name: "John Doe", // Replace with actual user's name
+        profilePictureUrl: "https://example.com/user1.jpg", // Replace with actual user's profile picture URL
+      })
+    );
+    setMessageText("");
+  }
+};
+
 
   return (
     <div className="p-4">
@@ -27,46 +36,26 @@ function OpenedChat({ chat }) {
         <>
           <div className="flex items-center space-x-4 mb-4">
             <img
-              src={chat.profilePicture}
-              alt={chat.name}
-              className="w-10 h-10 rounded-full"
+              src={chat.profilePic}
+              className="w-10 h-10 rounded-full bg-gray-200"
+              alt="Profile"
             />
+            {/* Placeholder for profile picture */}
+         
             <div>
               <h3 className="font-semibold">{chat.name}</h3>
-              <p className="text-gray-500">{chat.status}</p>
+              <p className="text-gray-500">
+                {chat.createdAt
+                  ? chat.createdAt.toDate().toLocaleTimeString()
+                  : ""}
+              </p>
             </div>
           </div>
           <div className="h-64 bg-gray-200 mb-4">
             {/* Render the messages */}
-            {messages.map((message) => (
-              <div key={message.id} className="mb-2">
-                <strong>{message.sender}:</strong> {message.text}
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center space-x-2 mb-4">
-            <div className="relative w-full">
-              <textarea
-                value={messageText}
-                onChange={(e) => setMessageText(e.target.value)}
-                className="w-full h-20 p-2 border border-gray-300 rounded-lg pr-16"
-                placeholder="Type your message..."
-              ></textarea>
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
-                <button className="text-gray-400 hover:text-gray-600">
-                  <FontAwesomeIcon icon={faPaperclip} />
-                </button>
-                <button className="text-gray-400 hover:text-gray-600">
-                  <FontAwesomeIcon icon={faSmile} />
-                </button>
-              </div>
+            <div className="mb-2">
+              <strong>{chat.uid}:</strong> {chat.text}
             </div>
-            <button
-              onClick={handleSendMessage}
-              className="px-4 py-2 text-white bg-blue-500 rounded-lg"
-            >
-              Send
-            </button>
           </div>
         </>
       )}

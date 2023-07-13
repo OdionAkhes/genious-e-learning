@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/solid";
+
 
 const CourseContent = ({ course }) => {
   const [currentSubcourseIndex, setCurrentSubcourseIndex] = useState(0);

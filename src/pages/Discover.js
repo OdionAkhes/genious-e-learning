@@ -111,7 +111,7 @@ function DiscoveryPage() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <button className="text- items-center flex px-2 py-2 bg-white p-2 rounded-xl  ">
+          <button className=" text-sm text-[#767278] items-center flex px-2 py-2 bg-white p-2 rounded-xl  ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

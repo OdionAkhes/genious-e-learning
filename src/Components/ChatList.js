@@ -6,21 +6,21 @@ import { useSelector } from "react-redux";
 
 function ChatList({ onSelectChat }) {
   const [searchText, setSearchText] = useState("");
-  const chats = useSelector((state) => state.messages.chats);
+  const messages = useSelector((state) => state.messages.messages);
 
-  const filteredChats = chats.filter((chat) =>
-    chat.name.toLowerCase().includes(searchText.toLowerCase())
+  const filteredChats = messages.filter((message) =>
+    message.uid.toLowerCase().includes(searchText.toLowerCase())
   );
 
   return (
     <div className="p-4">
-      <div className="flex items-center space-x-4 mb-4">
+      <div className="flex items-center space-x- mb-4">
         <input
           type="text"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          placeholder="Search chats..."
-          className="p-2 border border-gray-300 rounded-lg w-full"
+          placeholder="Search "
+          className="text-xs p-2 text-[#767278] border border-gray-300 rounded-lg w-full"
         />
         {/* Add "Add Chat" button */}
       </div>
@@ -28,18 +28,25 @@ function ChatList({ onSelectChat }) {
       {filteredChats.map((chat) => (
         <div
           key={chat.id}
-          className="flex items-center space-x-4 p-4 cursor-pointer"
+          className="flex items-center space-x-4 py-4 cursor-pointer"
           onClick={() => onSelectChat(chat)}
         >
+          {/* Placeholder for profile picture */}
           <img
-            src={chat.profilePicture}
-            alt={chat.name}
-            className="w-10 h-10 rounded-full"
+            src={chat.profilePic}
+            className="w-12 h-12 rounded-full bg-gray-200"
+            alt="Profile"
           />
-          <div>
-            <h3 className="font-semibold">{chat.name}</h3>
-            <p className="text-gray-500">{chat.lastMessagePreview}</p>
-            <p className="text-gray-500">{chat.lastMessageTime}</p>
+
+          <div className="">
+            <div className="flex justify-between">
+              <h3 className="text-sm text-[#102844]">{chat.name}</h3>
+              <p className="text-[#767278] text-[10px]">
+                {chat.createdAt.toDate().toLocaleTimeString()}
+              </p>
+            </div>
+
+            <p className="text-[#767278] text-xs">{chat.text}</p>
           </div>
         </div>
       ))}
