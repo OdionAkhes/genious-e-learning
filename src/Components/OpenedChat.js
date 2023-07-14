@@ -2,7 +2,7 @@
 
 // OpenedChat.js
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { sendMessage } from "../features/messagesSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";

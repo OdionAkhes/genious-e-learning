@@ -15,10 +15,6 @@ const CourseContent = ({ course }) => {
     return Math.round((completedUnits / subcourse.units.length) * 100);
   };
 
-  const nextUnitIndex = currentSubcourse.units.findIndex(
-    (unit) => !unit.completed
-  );
-
   return (
     <div className="space-y-6 py-6">
       <div className="mb-4 bg-[#F8F8FB] rounded-lg p-8">

@@ -3,7 +3,7 @@
 import React,{useState} from "react";
 import { useParams ,useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Tab } from "@headlessui/react";
+
 import Tabs from "./Tabs";
 import CourseDetailsInfo from "./CourseDetailsInfo";
 import CourseOverview from "./CourseOverview";
