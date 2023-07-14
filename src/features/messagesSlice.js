@@ -6,20 +6,13 @@ import {
   collection,
   getDocs,
   addDoc,
-  doc,
-  setDoc,
-  updateDoc,
+ 
 } from "firebase/firestore";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
+
 
 export const sendMessage = createAsyncThunk(
   "messages/sendMessage",
-  async ({ chatId, messageText, uid, name, profilePictureUrl }) => {
+  async ({  messageText, uid, name, profilePictureUrl }) => {
     // Add a new document to the `messages` collection
     const docRef = await addDoc(collection(db, "messages"), {
       text: messageText,

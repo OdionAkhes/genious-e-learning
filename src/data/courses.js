@@ -13,9 +13,9 @@ import artificialImage from "../assets/AI.png"
 import javascript1 from "../assets/javascript.png";
 import jsImage from "../assets/js.png";
 import awsImage from "../assets/awsImage.png";
-import course13Image from "../assets/python.png";
-import course14Image from "../assets/python.png";
-import course15Image from "../assets/python.png";
+// import course13Image from "../assets/python.png";
+// import course14Image from "../assets/python.png";
+// import course15Image from "../assets/python.png";
 
 
 
