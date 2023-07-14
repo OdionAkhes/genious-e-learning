@@ -4,7 +4,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { changeActiveLink, toggleSidebar } from "../features/sidebarSlice";
+import { changeActiveLink } from "../features/sidebarSlice";
 import Logo from "./Logo";
 import Icon from "./Icon";
 

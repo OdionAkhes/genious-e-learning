@@ -10,22 +10,22 @@ import { sendMessage } from "../features/messagesSlice";
 function OpenedChat({ chat }) {
   const dispatch = useDispatch();
   const [messageText, setMessageText] = useState("");
-  const messages = chat ? chat.messages : [];
 
-const handleSendMessage = () => {
-  if (messageText.trim() !== "") {
-    dispatch(
-      sendMessage({
-        chatId: chat.id,
-        messageText: messageText,
-        uid: "user1", // Replace with actual user's uid
-        name: "John Doe", // Replace with actual user's name
-        profilePictureUrl: "https://example.com/user1.jpg", // Replace with actual user's profile picture URL
-      })
-    );
-    setMessageText("");
-  }
-};
+
+// const handleSendMessage = () => {
+//   if (messageText.trim() !== "") {
+//     dispatch(
+//       sendMessage({
+//         chatId: chat.id,
+//         messageText: messageText,
+//         uid: "user1", // Replace with actual user's uid
+//         name: "John Doe", // Replace with actual user's name
+//         profilePictureUrl: "https://example.com/user1.jpg", // Replace with actual user's profile picture URL
+//       })
+//     );
+//     setMessageText("");
+//   }
+// };
 
 
   return (
