@@ -1,8 +1,8 @@
 /** @format */
 
 // OpenedChat.js
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
+// import { useDispatch } from "react-redux";
 // import { sendMessage } from "../features/messagesSlice";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
