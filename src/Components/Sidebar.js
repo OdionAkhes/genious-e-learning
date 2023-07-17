@@ -59,7 +59,7 @@ const isSidebarOpen = useSelector(
                 aria-label={link.name}
                 to={link.path}
                 onClick={() => handleLinkClick(link.name)}
-                exact={link.path === "/"}
+     
               >
                 {link.name}
               </NavLink>
@@ -81,7 +81,7 @@ const isSidebarOpen = useSelector(
               aria-label={link.name}
               to={link.path}
               onClick={() => handleLinkClick(link.name)}
-              exact={link.path === "/"}
+
             >
               {link.name}
             </NavLink>

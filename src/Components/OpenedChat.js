@@ -3,13 +3,13 @@
 // OpenedChat.js
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sendMessage } from "../features/messagesSlice";
+// import { sendMessage } from "../features/messagesSlice";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
 
 function OpenedChat({ chat }) {
-  const dispatch = useDispatch();
-  const [messageText, setMessageText] = useState("");
+  // const dispatch = useDispatch();
+  // const [messageText, setMessageText] = useState("");
 
 
 // const handleSendMessage = () => {
