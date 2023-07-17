@@ -8,15 +8,15 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyBdbxj4u_GUmNTtcZqYr5KfB8Di2px1BHo",
+  authDomain: "genious-elearning-app.firebaseapp.com",
+  databaseURL: "https://genious-elearning-app-default-rtdb.firebaseio.com",
+  projectId: "genious-elearning-app",
+  storageBucket: "genious-elearning-app.appspot.com",
+  messagingSenderId: "282699781362",
+  appId: "1:282699781362:web:eb3f96260feb796af62c6b",
+  measurementId: "G-6F45VEGE53",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
