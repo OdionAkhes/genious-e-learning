@@ -22,16 +22,16 @@ function ChatList({ onSelectChat }) {
           placeholder="Search "
           className="text-xs p-2 text-[#767278] border border-gray-300 rounded-lg w-full"
         />
-        {/* Add "Add Chat" button */}
+      
       </div>
-      {/* Render the list of chats */}
+
       {filteredChats.map((chat) => (
         <div
           key={chat.id}
           className="flex items-center space-x-4 py-4 cursor-pointer"
           onClick={() => onSelectChat(chat)}
         >
-          {/* Placeholder for profile picture */}
+      
           <img
             src={chat.profilePic}
             className="w-12 h-12 rounded-full bg-gray-200"

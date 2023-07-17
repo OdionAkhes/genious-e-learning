@@ -1,31 +1,39 @@
 /** @format */
 
 // OpenedChat.js
-import React from "react";
-// import { useDispatch } from "react-redux";
-// import { sendMessage } from "../features/messagesSlice";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { sendMessage as sendMessageAction } from "../features/messagesSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
+import SendMessage from "./SendMessage";
+
 
 function OpenedChat({ chat }) {
-  // const dispatch = useDispatch();
-  // const [messageText, setMessageText] = useState("");
+  const dispatch = useDispatch();
+  const [messages, setMessages] = useState([]);
+const allMessages = useSelector((state) => state.messages.messages);
+
+    useEffect(() => {
+      if (chat) {
+        const chatMessages = allMessages.filter(
+          (message) => message.chatId === chat.id
+        );
+        setMessages(chatMessages);
+      }
+    }, [chat, allMessages]);
 
 
-// const handleSendMessage = () => {
-//   if (messageText.trim() !== "") {
-//     dispatch(
-//       sendMessage({
-//         chatId: chat.id,
-//         messageText: messageText,
-//         uid: "user1", // Replace with actual user's uid
-//         name: "John Doe", // Replace with actual user's name
-//         profilePictureUrl: "https://example.com/user1.jpg", // Replace with actual user's profile picture URL
-//       })
-//     );
-//     setMessageText("");
-//   }
-// };
+  const handleSendMessage = (message) => {
+    dispatch(
+      sendMessageAction({
+        chatId: chat.id,
+        ...message,
+      })
+    );
+    setMessages((prevMessages) => [...prevMessages, message]);
+  };
+
 
 
   return (
@@ -41,7 +49,7 @@ function OpenedChat({ chat }) {
               alt="Profile"
             />
             {/* Placeholder for profile picture */}
-         
+
             <div>
               <h3 className="font-semibold">{chat.name}</h3>
               <p className="text-gray-500">
@@ -51,12 +59,13 @@ function OpenedChat({ chat }) {
               </p>
             </div>
           </div>
-          <div className="h-64 bg-gray-200 mb-4">
+          <div className="h-96  mb-4">
             {/* Render the messages */}
-            <div className="mb-2">
-              <strong>{chat.uid}:</strong> {chat.text}
+            <div className="mb-2 p-4 bg-[#FAFAFB] w-80">
+              {chat.text}
             </div>
           </div>
+          <SendMessage />
         </>
       )}
     </div>
