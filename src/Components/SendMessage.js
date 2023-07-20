@@ -12,7 +12,7 @@ const SendMessage = () => {
     const messagesCollection = collection(db, "messages");
     await addDoc(messagesCollection, {
       text: messageText,
-      uid: "user's uid", // replace with the actual user's uid
+      uid: "user's uid", 
       createdAt: new Date(),
     });
     setMessageText("");

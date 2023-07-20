@@ -17,8 +17,8 @@ export const fetchChats = createAsyncThunk("messages/fetchChats", async () => {
 const messagesSlice = createSlice({
   name: "messages",
   initialState: {
-    selectedChat: null, // You might want to rename this to `selectedMessage`
-    messages: [], // Rename `chats` to `messages`
+    selectedChat: null, 
+    messages: [], 
     status: "idle",
     error: null,
   },

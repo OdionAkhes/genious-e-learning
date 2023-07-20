@@ -4,8 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sendMessage as sendMessageAction } from "../features/messagesSlice";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
+
 import SendMessage from "./SendMessage";
 
 
