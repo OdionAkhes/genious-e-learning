@@ -3,31 +3,30 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { getFirestore, serverTimestamp, increment } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBdbxj4u_GUmNTtcZqYr5KfB8Di2px1BHo",
-  authDomain: "genious-elearning-app.firebaseapp.com",
-  databaseURL: "https://genious-elearning-app-default-rtdb.firebaseio.com",
-  projectId: "genious-elearning-app",
-  storageBucket: "genious-elearning-app.appspot.com",
-  messagingSenderId: "282699781362",
-  appId: "1:282699781362:web:d89ea9bdd94186f4f62c6b",
-  measurementId: "G-ENC20QLJPC"
+  apiKey: "AIzaSyCMCgA7fEeTz1aj0JLJn0mLM2dtuHWHIPw",
+  authDomain: "genious-649e9.firebaseapp.com",
+  projectId: "genious-649e9",
+  storageBucket: "genious-649e9.appspot.com",
+  messagingSenderId: "292433030610",
+  appId: "1:292433030610:web:f70fd94b4137a40e276c0b",
 };
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-// Initialize Firestore
+
 
 const db = getFirestore(app);
+ const firestore = getFirestore(app);
 
-// Initialize Authentication
 const auth = getAuth(app);
+ const FieldValue = {
+   serverTimestamp,
+   increment,
+ };
 
-// Initialize Storage
 const storage = getStorage(app); 
-export { db, auth ,storage};
+export { app, db, auth ,storage};
