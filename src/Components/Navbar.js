@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { toggleSidebar } from "../features/sidebarSlice";
 import { setSearchTerm } from "../features/actions"
 import {
@@ -16,9 +16,6 @@ function Navbar() {
   const dispatch = useDispatch()
  
 
-  const isSidebarOpen = useSelector(
-    (state) => state.sidebar.sidebar.isSidebarOpen
-  );
 
     const handleSearchChange = (event) => {
       dispatch(setSearchTerm(event.target.value));

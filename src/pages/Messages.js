@@ -12,9 +12,12 @@ function MessagesPage() {
   const selectedChat = useSelector((state) => state.messages.selectedChat);
   const chats = useSelector((state) => state.messages.chats);
 
-  const handleChatSelect = (chat) => {
-    dispatch(selectChat(chat));
-  };
+
+      const handleChatSelect = (chat) => {
+        dispatch(selectChat(chat));
+      };
+
+
 
   const handleSendMessage = () => {
     if (messageText.trim() !== "") {

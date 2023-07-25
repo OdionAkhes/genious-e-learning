@@ -1,34 +1,37 @@
 /** @format */
 
-// OpenedChat.js
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { sendMessage } from "../features/messagesSlice";
-import { Picker } from "emoji-mart";
-// to use the emoji picker
-// import "emoji-mart/css/emoji-mart.css"; // for emoji picker styles
-import { faPaperclip, faSmile } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import EmojiPicker from "emoji-picker-react";
+
+
 
 
 function OpenedChat({ chat }) {
   const dispatch = useDispatch();
   const [messageText, setMessageText] = useState("");
   const messages = chat ? chat.messages : [];
-  const [showEmojis, setShowEmojis] = useState(false);
+
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
+
+
   const handleSendMessage = () => {
     if (messageText.trim() !== "") {
       dispatch(sendMessage({ chatId: chat.id, messageText }));
       setMessageText("");
     }
   };
-const handleKeyPress = (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault();
-    handleSendMessage();
-  }
-};
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+const onEmojiClick = (event, emojiObject) => {
 
+  setMessageText(messageText + emojiObject.emoji);
+};
 
   const addEmoji = (e) => {
     let emoji = e.native;
@@ -36,7 +39,6 @@ const handleKeyPress = (e) => {
   };
 
   const sendAttachment = () => {};
-
 
   return (
     <div className="p-4 pb-0  flex flex-col justify-between h-full max-h-screen">
@@ -178,7 +180,7 @@ const handleKeyPress = (e) => {
                 placeholder="Type a message..."
               />
               <button
-                onClick={() => setShowEmojis(!showEmojis)}
+                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
                 className="absolute text-gray-400 hover:text-gray-600 right-10 top-1/2 transform -translate-y-1/2"
               >
                 <svg
@@ -216,11 +218,12 @@ const handleKeyPress = (e) => {
                   </g>
                 </svg>
               </button>
-              {showEmojis ? (
+              {showEmojiPicker ? (
                 <span className="absolute right-0 top-0 transform translate-y-full">
-                  <Picker onSelect={addEmoji} />
+                  <EmojiPicker onEmojiClick={onEmojiClick} />
                 </span>
               ) : null}
+
               <button
                 onClick={handleSendMessage}
                 className="absolute  text-white rounded-lg right-3 top-1/2 transform -translate-y-1/2"

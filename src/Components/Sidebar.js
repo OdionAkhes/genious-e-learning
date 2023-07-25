@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeActiveLink,toggleSidebar } from "../features/sidebarSlice";
 import Logo from "./Logo";
-import onClickOutside from "react-onclickoutside";
 import Icon from "./Icon";
 import { useMediaQuery } from "react-responsive";
 
@@ -41,10 +40,7 @@ const handleLinkClick = (link) => {
   }
 };
 
-Sidebar.handleClickOutside = () => isSidebarOpen && dispatch(toggleSidebar());
-const clickOutsideConfig = {
-  handleClickOutside: () => Sidebar.handleClickOutside,
-};
+
   
   if (!isSidebarOpen) {
     return null;
@@ -52,8 +48,8 @@ const clickOutsideConfig = {
 
   return (
     <aside
-      className={`fixed md:sticky top-0 h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white  ease-in-out duration-1000  ${
-        isSidebarOpen ? "translate-x-0" : "translate-x-full md:translate-x-0"
+      className={`fixed md:sticky top-0 h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white  transform ease-in-out transition-medium ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       } z-50`}
     >
       <div className="">
