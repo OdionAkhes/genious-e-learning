@@ -19,20 +19,20 @@ function OpenedChat({ chat }) {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 ">
       {!chat ? (
         <div className="text-gray-500">Select a chat to open</div>
       ) : (
         <>
-          <div className="flex items-center space-x-4 mb-4">
+          <div className="flex items-center space-x-4 mb-4 py-4">
             <img
               src={chat.profilePicture}
               alt={chat.name}
               className="w-10 h-10 rounded-full"
             />
             <div>
-              <h3 className="font-semibold">{chat.name}</h3>
-              <p className="text-gray-500">{chat.status}</p>
+              <h3 className=" text-[#102844]">{chat.name}</h3>
+              <p className="text-[#767278] text-sm ">{chat.status}</p>
             </div>
           </div>
           <div className=" mb-4">
@@ -40,9 +40,9 @@ function OpenedChat({ chat }) {
             {messages.map((message) => (
               <div
                 key={message.id}
-                className={`flex items-start mb-2 ${
+                className={`flex  mb-2 ${
                   message.sender === "You"
-                    ? "flex-row-reverse ml-auto"
+                    ? "flex-row-reverse  ml-auto"
                     : "mr-auto"
                 }`}
               >
@@ -51,36 +51,37 @@ function OpenedChat({ chat }) {
                     <img
                       src={message.profilePicture}
                       alt={message.sender}
-                      className="w-6 h-6 rounded-full"
+                      className="w-6 h-6 rounded-full "
                     />
                   </div>
                 )}
                 <div
-                  className={`p-2 rounded-lg ${
+                  className={`p-3 rounded-lg ${
                     message.sender === "You"
-                      ? "bg-[#4C6FFF] text-white"
-                      : "bg-[#F6F7F8] text-black"
+                      ? "bg-[#4C6FFF] my-8 text-white"
+                      : "bg-[#F6F7F8]  text-[#102844]"
                   } max-w-sm`}
                 >
-                  <p>{message.text}</p>
+                  <p className="text-sm">{message.text}</p>
                 </div>
               </div>
             ))}
           </div>
           <div className="flex items-center space-x-2 mb-4">
             <div className="relative w-full">
-              <textarea
+              <input
                 value={messageText}
+                type="text"
                 onChange={(e) => setMessageText(e.target.value)}
-                className="w-full h-20 p-2 border border-gray-300 rounded-lg pr-16"
-                placeholder="Type your message..."
-              ></textarea>
+                className=" text-sm w-full h-14 px-4  bg-[#FAFAFB]  rounded-lg pr-16"
+                placeholder="Type a message..."
+              />
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
                 <button className="text-gray-400 hover:text-gray-600">
-                  <FontAwesomeIcon icon={faPaperclip} />
+                  {/* <FontAwesomeIcon icon={faPaperclip} /> */}
                 </button>
                 <button className="text-gray-400 hover:text-gray-600">
-                  <FontAwesomeIcon icon={faSmile} />
+                  {/* <FontAwesomeIcon icon={faSmile} /> */}
                 </button>
               </div>
             </div>

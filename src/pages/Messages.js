@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectChat, sendMessage } from "../features/messagesSlice";
 import ChatList from "../Components/ChatList";
@@ -22,13 +22,18 @@ function MessagesPage() {
       setMessageText("");
     }
   };
+   useEffect(() => {
+     if (chats && chats.length > 0) {
+       handleChatSelect(chats[0]);
+     }
+   }, [chats]);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      <div className="w-full md:w-1/3 border-r border-gray-200">
+    <div className="gap-2 flex p-4 flex-col md:flex-row h-screen bg-[#F5F7F9]">
+      <div className="w-full md:w-1/3  bg-white rounded-lg ">
         <ChatList chats={chats} onSelectChat={handleChatSelect} />
       </div>
-      <div className="w-full md:w-2/3">
+      <div className="w-full md:w-2/3  bg-white rounded-lg ">
         <OpenedChat
           chat={selectedChat}
           messageText={messageText}

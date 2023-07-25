@@ -19,8 +19,8 @@ function ChatList({ onSelectChat }) {
           type="text"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          placeholder="Search chats..."
-          className="p-2 border border-gray-300 rounded-lg w-full"
+          placeholder="Search "
+          className="p-2  bg-[#F8F8FB] rounded-lg w-full text-sm "
         />
       </div>
       {/* Render the list of chats */}
