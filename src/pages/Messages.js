@@ -31,7 +31,11 @@ function MessagesPage() {
   return (
     <div className="gap-3 flex p-4 flex-col md:flex-row h-screen bg-[#F5F7F9]">
       <div className="w-full md:w-1/3  bg-white rounded-lg ">
-        <ChatList chats={chats} onSelectChat={handleChatSelect} />
+        <ChatList
+          chats={chats}
+          selectedChat={selectedChat}
+          onSelectChat={handleChatSelect}
+        />
       </div>
       <div className="w-full md:w-2/3  bg-white rounded-lg ">
         <OpenedChat
