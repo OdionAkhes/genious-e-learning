@@ -1,37 +1,40 @@
 /** @format */
 
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchChats, selectChat, sendMessage } from "../features/messagesSlice";
+import { selectChat, sendMessage } from "../features/messagesSlice";
 import ChatList from "../Components/ChatList";
 import OpenedChat from "../Components/OpenedChat";
 
 function MessagesPage() {
   const dispatch = useDispatch();
+  const [messageText, setMessageText] = useState("");
   const selectedChat = useSelector((state) => state.messages.selectedChat);
-const messages = useSelector((state) => state.messages.messages);
-
-  useEffect(() => {
-    dispatch(fetchChats());
-  }, [dispatch]);
+  const chats = useSelector((state) => state.messages.chats);
 
   const handleChatSelect = (chat) => {
     dispatch(selectChat(chat));
   };
 
-  const handleSendMessage = (messageText) => {
+  const handleSendMessage = () => {
     if (messageText.trim() !== "") {
-      dispatch(sendMessage({ chatId: selectedChat.id, messageText }));
+      dispatch(sendMessage(selectedChat.id, messageText));
+      setMessageText("");
     }
   };
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
       <div className="w-full md:w-1/3 border-r border-gray-200">
-        <ChatList chats={messages} onSelectChat={handleChatSelect} />
+        <ChatList chats={chats} onSelectChat={handleChatSelect} />
       </div>
       <div className="w-full md:w-2/3">
-        <OpenedChat chat={selectedChat} onSendMessage={handleSendMessage} />
+        <OpenedChat
+          chat={selectedChat}
+          messageText={messageText}
+          setMessageText={setMessageText}
+          onSendMessage={handleSendMessage}
+        />
       </div>
     </div>
   );
