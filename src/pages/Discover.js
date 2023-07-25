@@ -63,7 +63,7 @@ function DiscoveryPage() {
       <div className="flex items-center justify-between mb-4 text-sm">
         <div className="flex space-x-4">
           {/* Sort By dropdown */}
-          <div className="text-sm bg-white p-2 rounded-xl flex items-center ">
+          <div className="text-sm bg-white px-2 rounded-xl flex items-center ">
             <label htmlFor="sortSelect" className="">
               Sort By:
             </label>
@@ -91,7 +91,7 @@ function DiscoveryPage() {
             ></select>
           </div>
 
-          <div className="text-[14px] bg-white p-2 rounded-xl flex items-center ">
+          <div className="text-[14px] bg-white px-2 rounded-xl flex items-center ">
             <label htmlFor="categorySelect" className="">
               Category:
             </label>
@@ -110,8 +110,8 @@ function DiscoveryPage() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <button className=" text-sm text-[#767278] items-center flex px-2 py-2 bg-white p-2 rounded-xl  ">
+        <div className="flex items-center space-x-4 ">
+          <button className="ml-3 text-sm text-[#767278] items-center flex px-2 py-2 bg-white  rounded-xl  ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

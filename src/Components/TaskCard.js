@@ -4,7 +4,7 @@ import React from "react";
 
 const TaskCard = ({ task }) => {
   return (
-    <div className="flex items-center justify-between border-b pb-3 mb-3">
+    <div className="flex items-center justify-between border-b border-[#8F92A1] pb-3 mb-3">
       {task.icon}
       <div className="w-3/5">
         <h3 className="text-sm font-semibold">{task.task}</h3>

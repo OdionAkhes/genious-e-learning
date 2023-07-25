@@ -29,7 +29,7 @@ function HomePage() {
   return (
     <div className="p-6 bg-[#f9f8f8]">
       <div className="grid grid-cols-1 lg:grid-cols-4  md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-white p-4 rounded-lg shadow">
+        <div className="bg-white p-4 rounded-xl shadow">
           <div className="flex items-center mb-2">
             <div className="rounded-full bg-gradient-to-br from-purple-500 via-indigo-600 to-blue-700 text-white h-10 w-10 flex items-center justify-center mr-2">
               <svg
@@ -154,7 +154,7 @@ function HomePage() {
         </div>
 
         <div className="bg-white p-4 rounded-lg shadow">
-          <div className="flex items-center mb-2">
+          <div className="flex  mb-2">
             <div className="rounded-full bg-gradient-to-t from-green-500 to-green-300 text-white h-10 w-10 flex items-center justify-center mr-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -177,8 +177,22 @@ function HomePage() {
             <div>
               <h2 className="text-lg font-semibold">{careerPathsCount}</h2>
               <p className="text-sm text-[#767278]">Career Path</p>
-              <button className="text-[#4C6FFF] py-4 rounded text-sm">
-                Start Quiz
+              <button className="text-[#4C6FFF] py-4 rounded text-sm flex  items-center gap-3">
+                Start Quiz{" "}
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="7"
+                    viewBox="0 0 12 7"
+                    fill="none"
+                  >
+                    <path
+                      d="M11.0469 3.20605L7.84082 6.41211V3.79395H0V2.61133H7.84082L7.84766 0L11.0469 3.20605Z"
+                      fill="#4C6FFF"
+                    />
+                  </svg>
+                </span>
               </button>
             </div>
           </div>

@@ -2,13 +2,13 @@ import React from 'react'
 
 const UpcomingTasks = ({upcomingTasks}) => {
   return (
-    <div className="col-span-3 md:col-span-1 ">
+    <div className="col-span-3 md:col-span-1 overflow-y-auto">
       <h3 className="mb-8">Upcoming Tasks</h3>
       <div className="bg-white rounded-lg shadow">
         {upcomingTasks.map((task) => (
           <div
             key={task.id}
-            className="p-6 space-y-2 flex items-center border-b-[0.5px] border-[#8F92A1]"
+            className="p-6 space-y-3 flex items-center border-b-[0.5px] "
           >
             <div
               className="mr-3 p-3 rounded-lg "
