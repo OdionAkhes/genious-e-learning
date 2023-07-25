@@ -4,9 +4,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { changeActiveLink } from "../features/sidebarSlice";
+import { changeActiveLink,toggleSidebar } from "../features/sidebarSlice";
 import Logo from "./Logo";
 import Icon from "./Icon";
+import { useMediaQuery } from "react-responsive";
 
 const navLinks = [
   { name: "Home", path: "/", icon: "home" },
@@ -27,22 +28,27 @@ const activeLink = useSelector((state) => state.sidebar.sidebar.activeLink);
 const isSidebarOpen = useSelector(
   (state) => state.sidebar.sidebar.isSidebarOpen
 );
+const dispatch = useDispatch();
+ const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
+  
+const handleLinkClick = (link) => {
+  dispatch(changeActiveLink(link));
+  // Close sidebar on small screen when a link is clicked
 
-  const dispatch = useDispatch();
-
-  const handleLinkClick = (link) => {
-    dispatch(changeActiveLink(link));
-  };
-
+  if (isSmallScreen) {
+    dispatch(toggleSidebar());
+  }
+};
 
 
+  
   if (!isSidebarOpen) {
     return null;
   }
 
   return (
     <aside
-      className={`fixed md:sticky top-0 h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white  transition-transform duration-300 ease-in-out ${
+      className={`fixed md:sticky top-0 h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white  transform ease-in-out transition-medium ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       } z-50`}
     >

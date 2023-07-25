@@ -97,15 +97,15 @@ function DiscoveryPage() {
             </label>
             <select
               id="categorySelect"
-              className=" py-1 px-1 w-26 text-[#767278]"
+              className=" py-1 px-1 w-26 text-[#767278] text-sm"
               value={selectedCategory}
               onChange={handleCategoryChange}
             >
               <option value="all">All Category</option>
-              <option value="technology">Technology</option>
-              <option value="business">Business</option>
-              <option value="marketing">Marketing</option>
               <option value="design">Design</option>
+              <option value="development">Development</option>
+              <option value="javascript">Javascript</option>
+              <option value="python">Python</option>
             </select>
           </div>
         </div>

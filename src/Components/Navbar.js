@@ -8,13 +8,13 @@ import {
   FiSearch,
   FiBell,
   FiShoppingCart,
-  FiChevronDown,
+
 } from "react-icons/fi";
 import profileImage from "../assets/avatar.png";
 
 function Navbar() {
-  const dispatch = useDispatch();
- ;
+  const dispatch = useDispatch()
+ 
 
   const isSidebarOpen = useSelector(
     (state) => state.sidebar.sidebar.isSidebarOpen

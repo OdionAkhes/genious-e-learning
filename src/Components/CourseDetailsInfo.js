@@ -7,7 +7,7 @@ const CourseDetailsInfo = ({ course }) => {
   return (
     <div>
       <div className="px-6 flex justify-between p-4 border-2 border-dashed bg-[#F8F8FB] border-[#0000001A] rounded-xl">
-        <h3 className="font-[500] text-md"> USD {course.price}</h3>
+        <h3 className="font-[500] text-md"> USD {course.price}.00</h3>
         <div className="relative">
           <h3 className="text-[#767278] z-10">$ {course.discountPrice}</h3>
           <div className="absolute h-0.5 bg-[#FF7800] transform -rotate-12 left-[-10%] right-[-10%] top-1/2"></div>
@@ -50,7 +50,7 @@ const CourseDetailsInfo = ({ course }) => {
         <CourseFeatures course={course} />
       </div>
 
-      <hr className="my-4" />
+      <hr className="my-4 " />
 
       <h3>Tags:</h3>
       <div className="flex  flex-wrap gap-2 my-4">

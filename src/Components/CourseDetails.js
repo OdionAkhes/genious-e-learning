@@ -51,9 +51,12 @@ const CourseDetails = () => {
               <h3 className="mt-4 font-semibold  text-[#102844]">
                 {course.name}
               </h3>
-              <p className="text-sm text-[#767278]">By {course.instructor}</p>
+              <p className="text-sm text-[#767278] my-2 ">
+                By <span className="text-[#102844]">Simon Shaw,</span> Illustrator
+                and 3D designer {course.instructor}
+              </p>
 
-              <div className="mt-4">
+              <div className="mt-6">
                 <Tabs course={course} setSelectedTab={setSelectedTab} />
               </div>
             </div>
