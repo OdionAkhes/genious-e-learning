@@ -49,9 +49,9 @@ function OpenedChat({ chat }) {
                 {message.sender !== "You" && (
                   <div className="pr-2">
                     <img
-                      src={message.profilePicture}
+                      src={chat.profilePicture}
                       alt={message.sender}
-                      className="w-6 h-6 rounded-full "
+                      className="w-10 mr-2 h-10 rounded-full "
                     />
                   </div>
                 )}

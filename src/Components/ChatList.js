@@ -13,7 +13,7 @@ function ChatList({ onSelectChat }) {
   );
 
   return (
-    <div className="p-4">
+    <div className="p-4 overflow-y-auto h-full  no-scrollbar">
       <div className="flex items-center space-x-4 mb-4">
         <input
           type="text"

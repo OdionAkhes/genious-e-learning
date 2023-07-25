@@ -2,7 +2,13 @@
 
 // messagesSlice.js
 import { createSlice } from "@reduxjs/toolkit";
-
+import estherImageSrc from "../assets/Ellipse 92.jpg";
+import codyImageSrc from "../assets/Ellipse 92 (1).jpg";
+import savImageSrc from "../assets/Ellipse 92 (2).jpg";
+import robImageSrc from "../assets/Ellipse 92 (3).jpg";
+import coopImageSrc from "../assets/Ellipse 92 (4).jpg";
+import webbImageSrc from "../assets/Ellipse 92 (5).jpg";
+import katImageSrc from "../assets/Ellipse 92 (6).jpg";
 function getCurrentTimestamp() {
   const now = new Date();
   const hours = now.getHours().toString().padStart(2, "0");
@@ -19,7 +25,7 @@ const messagesSlice = createSlice({
       {
         id: 1,
         name: "Esther Howard",
-        profilePicture: "../assets/AI.png",
+        profilePicture: estherImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -60,7 +66,7 @@ const messagesSlice = createSlice({
       {
         id: 2,
         name: "Cody Fisher",
-        profilePicture: "../assets/AI.png",
+        profilePicture: codyImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -101,7 +107,7 @@ const messagesSlice = createSlice({
       {
         id: 3,
         name: "Savannah Nguyen",
-        profilePicture: "../assets/AI.png",
+        profilePicture: savImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -142,7 +148,7 @@ const messagesSlice = createSlice({
       {
         id: 4,
         name: "Robert Fox",
-        profilePicture: "../assets/AI.png",
+        profilePicture: robImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -183,7 +189,7 @@ const messagesSlice = createSlice({
       {
         id: 5,
         name: "Bessie Cooper",
-        profilePicture: "../assets/AI.png",
+        profilePicture: coopImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -224,7 +230,7 @@ const messagesSlice = createSlice({
       {
         id: 6,
         name: "Theresa Webb",
-        profilePicture: "../assets/AI.png",
+        profilePicture: webbImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",
@@ -265,7 +271,7 @@ const messagesSlice = createSlice({
       {
         id: 7,
         name: "Kathryn Murphy",
-        profilePicture: "../assets/AI.png",
+        profilePicture: katImageSrc,
         lastMessagePreview:
           "The passage experienced a surge in popularity during the…",
         lastMessageTime: "10:30 AM",

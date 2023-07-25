@@ -41,7 +41,11 @@ const isSidebarOpen = useSelector(
   }
 
   return (
-    <aside className="sticky  top-0 hidden h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white">
+    <aside
+      className={`fixed md:sticky top-0 h-screen text-sm w-64 md:flex  flex-col justify-between bg-gradient-custom text-white  transition-transform duration-300 ease-in-out ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      } z-50`}
+    >
       <div className="">
         <div className="p-4 flex flex-col items-center space-y-4 mb-6">
           <Logo />
@@ -59,7 +63,6 @@ const isSidebarOpen = useSelector(
                 aria-label={link.name}
                 to={link.path}
                 onClick={() => handleLinkClick(link.name)}
-     
               >
                 {link.name}
               </NavLink>
@@ -81,7 +84,6 @@ const isSidebarOpen = useSelector(
               aria-label={link.name}
               to={link.path}
               onClick={() => handleLinkClick(link.name)}
-
             >
               {link.name}
             </NavLink>
