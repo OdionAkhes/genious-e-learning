@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState,useRef } from "react";
+import React, { useState } from "react";
 import {  useDispatch } from "react-redux";
 import { sendMessage } from "../features/messagesSlice";
 import Picker from "emoji-picker-react";
