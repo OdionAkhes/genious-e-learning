@@ -4,7 +4,7 @@ Welcome to Genious E-Learning platform. A Website to discover, join, and learn f
 
 ## Live Site
 
-Visit the live site [https://main--glittering-ganache-b3e4f1.netlify.app/](https://main--glittering-ganache-b3e4f1.netlify.app/)
+Visit the live site [https://genious-e-learning.netlify.app/](https://genious-e-learning.netlify.app/)
 
 ## Features
 
