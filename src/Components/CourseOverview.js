@@ -4,7 +4,7 @@ import React from "react";
 
 const CourseOverview = ({ subcourses }) => {
   return (
-    <div className="overflow-auto max-h-[1040px] space-y-4">
+    <div className="overflow-y-auto max-h-[1040px] space-y-4">
       <h3 className="text-[#102844]">Basics Overview</h3>
       {subcourses.map((subcourse, index) => (
         <div className="space-y-6 " key={index}>

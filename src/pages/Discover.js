@@ -61,7 +61,7 @@ function DiscoveryPage() {
     <div className="p-6 bg-[#F5F7F9]">
       <h3 className="text-lg mb-6 font-semibold text-[#102844]"> Discover</h3>
       <div className="flex items-center justify-between mb-4 text-sm">
-        <div className="flex space-x-4">
+        <div className="flex  flex-wrap gap-2 md:gap-6">
           {/* Sort By dropdown */}
           <div className="text-sm bg-white px-2 rounded-xl flex items-center ">
             <label htmlFor="sortSelect" className="">
@@ -121,7 +121,7 @@ function DiscoveryPage() {
             >
               <path
                 fill-rule="evenodd"
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M6 8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8C18 8.55228 17.5523 9 17 9H7C6.44772 9 6 8.55228 6 8ZM8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12ZM10 16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16C14 16.5523 13.5523 17 13 17H11C10.4477 17 10 16.5523 10 16Z"
                 fill="#767278"
               />
@@ -141,7 +141,7 @@ function DiscoveryPage() {
             >
               <path
                 fill-rule="evenodd"
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 d="M10.5 10.5H16.5V16.5H10.5V10.5ZM10.5 19.5H16.5V25.5H10.5V19.5ZM19.5 19.5H25.5V25.5H19.5V19.5ZM19.5 10.5H25.5V16.5H19.5V10.5Z"
                 fill="#4C6FFF"
               />

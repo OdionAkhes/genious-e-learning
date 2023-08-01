@@ -5,9 +5,9 @@ import CourseInfoTab from "./CourseInfoTab";
 import CourseContent from "./CourseContent";
 function Tabs({course, setSelectedTab}) {
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <Tab.Group>
-        <Tab.List className="flex  space-x-8 " aria-label="My tabs">
+        <Tab.List className="flex flex-wrap gap-8 " aria-label="My tabs">
           <Tab
             onClick={() => setSelectedTab("Information")}
             className={({ selected }) =>

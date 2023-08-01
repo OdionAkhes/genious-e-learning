@@ -18,7 +18,7 @@ const CourseDetails = () => {
 
     return course ? (
       <div className="bg-[#F5F7F9] px-6 pt-6">
-        <div className=" grid grid-cols-3 gap-6 ">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-6 ">
           <div className="col-span-2">
             <h3 className="font-semibold pb-2 bg-[#F5F7F9]">Discover</h3>
             <div className="flex pb-4 items-center bg-[#F5F7F9] ">
@@ -56,12 +56,12 @@ const CourseDetails = () => {
                 and 3D designer {course.instructor}
               </p>
 
-              <div className="mt-6">
+              <div className="mt-6 ">
                 <Tabs course={course} setSelectedTab={setSelectedTab} />
               </div>
             </div>
           </div>
-          <div className="bg-white p-6 rounded-xl">
+          <div className="bg-white p-6 rounded-xl col-span-1">
             {selectedTab === "Information" ? (
               <CourseDetailsInfo course={course} />
             ) : (

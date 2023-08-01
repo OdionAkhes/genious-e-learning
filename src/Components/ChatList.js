@@ -28,14 +28,14 @@ function ChatList({ onSelectChat, selectedChat }) {
             <path
               d="M12 8.40002V15.6"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M8.3999 12H15.5999"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
@@ -55,7 +55,7 @@ function ChatList({ onSelectChat, selectedChat }) {
           key={chat.id}
           className={`flex items-center space-x-4 p-4 py-6 border-b cursor-pointer ${
             selectedChat && chat.id === selectedChat.id
-              ? "bg-[rgb(245,247,255)]  rounded-md text-[#102844]"
+              ? "bg-[rgb(245,247,255)]   rounded-lg border-b-0 text-[#102844]"
               : ""
           }`}
           onClick={() => onSelectChat(chat)}
@@ -71,7 +71,55 @@ function ChatList({ onSelectChat, selectedChat }) {
               <p className="text-gray-500 text-xs">{chat.lastMessageTime}</p>
             </div>
 
-            <p className="text-gray-500 text-xs">{chat.lastMessagePreview}</p>
+            <div className="flex justify-between items-center">
+              {" "}
+            
+              <p className="text-gray-500 text-xs `">{chat.lastMessagePreview}</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                className="flex items-end"
+                height="16"
+                viewBox="0 0 10 6"
+                fill="none"
+              >
+                <g opacity="0.6">
+                  <g opacity="0.6">
+                    <path
+                      opacity="0.6"
+                      d="M7.1 1L2.9 5L1 3.182"
+                      stroke="#102844"
+                      strokeWidth="0.762"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <g opacity="0.6">
+                    <path
+                      opacity="0.6"
+                      d="M9.00479 1L4.80479 5L2.90479 3.182"
+                      stroke="white"
+                      strokeWidth="1.143"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                  <g opacity="0.6">
+                    <path
+                      opacity="0.6"
+                      d="M9.00479 1L4.80479 5L2.90479 3.182"
+                      stroke="#102844"
+                      strokeWidth="0.762"
+                      strokeMiterlimit="10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       ))}

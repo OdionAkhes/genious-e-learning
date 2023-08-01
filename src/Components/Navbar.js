@@ -28,10 +28,10 @@ function Navbar() {
   };
 
   return (
-    <nav className="text-sm py-4 px-6 flex sm:flex-row items-center justify-between">
-      <div className="flex items-center space-x-8">
+    <nav className="text-sm py-4 px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center space-x-0 sm:space-x-8 w-full sm:w-auto">
         <button
-          className="text-[#2D405A] focus:outline-none"
+          className="text-[#2D405A] focus:outline-none mb-4 sm:mb-0 cursor-pointer"
           onClick={handleToggleSidebar}
         >
           <svg
@@ -55,12 +55,12 @@ function Navbar() {
             />
           </svg>
         </button>
-        <div className="relative ">
+        <div className="relative w-full">
           <input
             type="search"
             onChange={handleSearchChange}
             placeholder="Search anything"
-            className="mx-2 text-[#A6ACBE] py-1 px-2 pl-8 rounded-3xl focus:outline-none lg:w-96  "
+            className="mx-2 text-[#A6ACBE] py-1 px-2 pl-8 rounded-3xl focus:outline-none md:w-70  "
           />
           <div className="absolute inset-y-0 left-0 flex items-center pl-4">
             <FiSearch className="text-gray-400" />
@@ -109,7 +109,6 @@ function Navbar() {
                 />
               </svg>
             </div>
-            
           </button>
         </div>
       </div>

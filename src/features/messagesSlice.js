@@ -316,7 +316,7 @@ const messagesSlice = createSlice({
       state.selectedChat = action.payload;
     },
     sendMessage: (state, action) => {
-      const { chatId, messageText } = action.payload;
+      const { chatId, messageText,files } = action.payload;
       const chat = state.chats.find((chat) => chat.id === chatId);
       if (chat) {
         const newMessage = {
@@ -324,6 +324,7 @@ const messagesSlice = createSlice({
           text: messageText,
           sender: "You",
           timestamp: getCurrentTimestamp(),
+          files: files || [],
         };
         chat.messages.push(newMessage);
       }
